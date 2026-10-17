@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clemzy AI Video</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b0f;
+      color: white;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 35px;
+    }
+
+    .box {
+      background: #17171d;
+      padding: 18px;
+      border-radius: 15px;
+      margin-bottom: 18px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 130px;
+      box-sizing: border-box;
+      background: #0d0d12;
+      color: white;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 16px;
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 17px;
+      font-weight: bold;
+      margin-top: 15px;
+      cursor: pointer;
+      background: #ffffff;
+      color: #000;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .status {
+      text-align: center;
+      color: #aaa;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .footer {
+      text-align: center;
+      color: #666;
+      margin-top: 40px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="logo">🤖 Clemzy AI</div>
+
+    <div class="subtitle">
+      Tengeneza video kwa kutumia AI
+    </div>
+
+    <div class="box">
+
+      <label>✍️ Andika unachotaka kutengeneza:</label>
+
+      <textarea id="prompt"
+        placeholder="Mfano: Mimi naendesha Bugatti katikati ya Dar es Salaam, video iwe realistic...">
+      </textarea>
+
+      <button onclick="generateVideo()">
+        🎬 Generate Video
+      </button>
+
+      <div class="status" id="status">
+        ⏳ Clemzy AI inajiandaa...
+      </div>
+
+    </div>
+
+    <div class="footer">
+      © 2026 Clemzy AI
+    </div>
+
+  </div>
+
+  <script>
+
+    function generateVideo() {
+
+      const prompt = document.getElementById("prompt").value.trim();
+      const status = document.getElementById("status");
+
+      if (prompt === "") {
+        alert("Tafadhali andika maelezo ya video kwanza.");
+        return;
+      }
+
+      status.style.display = "block";
+      status.innerHTML =
+        "⏳ Video yako inaandaliwa...";
+
+      setTimeout(function() {
+
+        status.innerHTML =
+          "⚠️ AI video engine bado haijaunganishwa. Hatua inayofuata tutaunganisha AI ya kutengeneza video.";
+
+      }, 2000);
+
+    }
+
+  </script>
+
+</body>
+</html>
